@@ -11,7 +11,11 @@
                   :extra-deps  {integrant/repl {:mvn/version "0.3.2"}}}
 
            :test {:extra-paths ["test"]
-                  :extra-deps  {ring/ring-mock {:mvn/version "0.4.0"}}}
+                  :extra-deps  {ring/ring-mock {:mvn/version "0.4.0"}
+                                io.github.cognitect-labs/test-runner
+                                               {:git/url "https://github.com/cognitect-labs/test-runner.git"
+                                                :sha     "705ad25bbf0228b1c38d0244a36001c2987d7337"}}
+                  :exec-fn     cognitect.test-runner.api/test}
 
            :ui   {:extra-deps {reagent/reagent      {:mvn/version "1.1.0"}
                                cljs-ajax/cljs-ajax  {:mvn/version "0.8.3"}
