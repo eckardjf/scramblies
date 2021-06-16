@@ -1,6 +1,7 @@
 (ns scramblies.handler-test
   (:require [clojure.test :refer :all]
             [integrant.core :as ig]
+            [scramblies.server]
             [ring.mock.request :as mock]
             [ring.util.http-status :as status]
             [jsonista.core :as j]))
