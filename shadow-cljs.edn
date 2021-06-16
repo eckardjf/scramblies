@@ -1,0 +1,18 @@
+{:nrepl    {:port 8777}
+
+ :deps     {:aliases [:ui :test]}
+
+ :dev-http {8280 "resources/public"
+            8290 "target/browser-test"}
+
+ :builds   {:app
+            {:target     :browser
+             :output-dir "resources/public/js/compiled"
+             :asset-path "/js/compiled"
+             :modules    {:app {:init-fn scramblies.ui.app/init}}}
+
+            :browser-test
+            {:target    :browser-test
+             :ns-regexp "-test$"
+             :runner-ns shadow.test.browser
+             :test-dir  "target/browser-test"}}}
